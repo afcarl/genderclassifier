@@ -1,4 +1,4 @@
-from sklearn import tree,svm
+from sklearn import tree,svm,linear_model
 
 #Height Weight Shoe size
 X = [[181,80,44],[177,70,43],[160,60,38],[154,54,37],[166,65,40],[190,90,47],[175,64,39],[179,70,40],[155,55,37],[171,75,42],[181,45,43]]
@@ -8,11 +8,13 @@ Y = ['male', 'male', 'female', 'female', 'male', 'male', 'female', 'female','fem
 #defining models
 clf = tree.DecisionTreeClassifier()
 clf2 = svm.SVC()
+clf3 = linear_model.SGDClassifier()
 
 
 #traning
 clf = clf.fit(X,Y)
 clf2 = clf2.fit(X,Y)
+clf3 = clf3.fit(X,Y)
 # inp = []
 # height = input("Enter Height: ")
 # inp.append(height)
@@ -25,9 +27,13 @@ clf2 = clf2.fit(X,Y)
 
 prediction = clf.predict([180,60,44])
 prediction2 = clf2.predict([180,60,44])
+prediction3 = clf3.predict([180,60,44])
 
 print("From DTree")
 print(prediction)
 
 print("from svm")
 print(prediction2)
+
+print('from SGDClassifier')
+print(prediction3)
