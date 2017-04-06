@@ -5,16 +5,19 @@ X = [[181,80,44],[177,70,43],[160,60,38],[154,54,37],[166,65,40],[190,90,47],[17
 Y = ['male', 'male', 'female', 'female', 'male', 'male', 'female', 'female','female', 'male', 'male']
 
 
+
 #defining models
 clf = tree.DecisionTreeClassifier()
 clf2 = svm.SVC()
 clf3 = linear_model.SGDClassifier()
+clf4 = linear_model.Perceptron()
 
 
 #traning
 clf = clf.fit(X,Y)
 clf2 = clf2.fit(X,Y)
 clf3 = clf3.fit(X,Y)
+clf4 = clf4.fit(X,Y)
 # inp = []
 # height = input("Enter Height: ")
 # inp.append(height)
@@ -28,6 +31,7 @@ clf3 = clf3.fit(X,Y)
 prediction = clf.predict([180,60,44])
 prediction2 = clf2.predict([180,60,44])
 prediction3 = clf3.predict([180,60,44])
+prediction4 = clf4.predict([180,60,44])
 
 print("From DTree")
 print(prediction)
@@ -37,3 +41,6 @@ print(prediction2)
 
 print('from SGDClassifier')
 print(prediction3)
+
+print('from perceptron')
+print(prediction4)
